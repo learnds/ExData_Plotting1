@@ -7,8 +7,9 @@ dattime<-strptime(paste(dat$Date,dat$Time),"%Y-%m-%d %H:%M:%S")
 
 dat<-cbind(dat,dattime)
 
-plot(dat$dattime,dat$Global_active_power,ylab="Global Active Power(kilowatts)",xlab="",pch=NA)
+png(filename="plot2.png",width=480,height=480)
+
+plot(dat$dattime,dat$Global_active_power,ylab="Global Active Power (kilowatts)",xlab="",pch=NA)
 lines(dat$dattime,dat$Global_active_power)
 
-dev.copy(png,file="plot2.png",width=480,height=480)
 dev.off()
